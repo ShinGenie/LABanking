@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>음식주문</title>
+
+<script type="text/javascript">
+//1만원 이상일때 15% 할인
+function process(){
+	gook = document.form.gook.value;
+	gNum = document.form.gNum.value;
+	bap = document.form.bap.value;
+	bNum = documnet.form.bNum.value;
+	
+	gap = 0;
+	gap1 = 0;
+	switch(gook){
+	case "미역국" gap = 3500; break; 
+	case "김치국" gap = 3000; break; 
+	case "된장국" gap = 3000; break; 
+	}
+	switch(bap){
+	case "백미국" gap1 = 1000; break; 
+	case "현미국" gap1 = 1500; break; 
+	case "오곡국" gap1 = 1500; break; 
+	}
+	
+	gookHap = gook*gNum;
+	bapHap = bap*bNum;
+	
+	total = gookHap+bapHap;
+	
+	data =  "국:" + gook + "\t\t갯수:" + gNum + "\t\t금액:" + gookhap + "\n"
+	+ "음료:" + bap + "\t\t갯수:" + bNum + "\t\t금액:" + baphap + "\n"
+	+ "총금액:" + total +"원";
+	
+	
+	document.input.result.value = data;
+	
+}
+
+
+</script>
+
+
+
+
+</head>
+<body>
+<form name = "form">
+<table>
+
+
+<h3>음식주문</h3>
+
+<tr>
+<td>국</td><td>밥</td>
+</tr>
+
+<tr>
+
+<td>
+<select name=gook>
+<option>미역국 3500</option>
+<option>김치국 3000</option>
+<option>된장국 3000</option>
+</select>
+</td>
+
+<td><input type="text" name="gNum" value=""></td>
+
+<td>
+<select name=bap>
+<option>백미밥 1000</option>
+<option>현미밥 1500</option>
+<option>오곡밥 1500</option>
+</select>
+</td>
+
+<td><input type="text" name="bNum" value=""></td>
+
+</tr>
+
+<tr>
+<td><input type="button" name="send" onClick="process();" value="주문하기"></td>
+</tr>
+
+</table>
+<textarea name="result" rows=10 cols=80 style="background-color:yellow"></textarea>
+
+</form>
+
+</body>
+</html>

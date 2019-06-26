@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function pro(){
+//변수선언
+bunsik = document.input.bunsik.value;
+bunNum = document.input.bunNum.value;
+drink = document.input.drink.value;
+drinkNum = document.input.drinkNum.value;
+
+ret1=0;
+ret2=0;
+
+switch(bunsik){
+case "떡복이" : ret1=500; break;
+case "만두" : ret1=300; break;
+case "순대" : ret1=700; break;
+case "김밥" : ret1=300; break;
+}
+
+switch(drink){
+case "콜라" : ret2=70; break;
+case "사이다" : ret2=100; break;
+case "환타" : ret2=150; break;
+case "오랜지주스" : ret2=200; break;
+}
+
+bunsikhap = ret1*bunNum;
+drinkhap = ret2*drinkNum;
+total = bunsikhap+drinkhap;
+
+
+data =  "분식:" + bunsik + "\t\t갯수:" + bunNum + "\t\t금액:" + bunsikhap + "\n"
++ "음료:" + drink + "\t\t갯수:" + drinkNum + "\t\t금액:" + drinkhap + "\n"
++ "총금액:" + total +"원";
+		
+document.input.result.value = data;
+
+
+}
+
+</script>
+
+</head>
+<body>
+
+
+	<h1>주문표</h1>
+	<form name = "input">
+	<table>
+	
+	<tr>
+	<td>분식종류</td>
+	<td>갯수</td>
+	<td>음료종류</td>
+	<td>갯수</td>
+	</tr>
+	
+	<tr>
+	
+	<td>
+	<select name="bunsik">
+	<option value="떡복이"> 떡복이(500원)
+	<option value="만두"> 만두 (300원)
+	<option value="순대"> 순대(700원)
+	<option value="김밥"> 김밥(300원)
+	</select>
+	</td>
+	
+	<td>
+	<input type="text" name="bunNum" value="">
+	</td>
+	
+	<td>
+	<select name="drink">
+	<option value="콜라"> 콜라(70원)
+	<option value="사이다"> 사이다 (100원)
+	<option value="환타"> 환타(150원)
+	<option value="오랜지주스"> 오랜지주스(200원)
+	</select>
+	</td>
+	
+	<td>
+	<input type="text" name="drinkNum" value="">
+	</td>
+	
+	</tr>
+	</table>
+	<p>
+	<input 
+	type="button" 
+	value="주문확인" 
+	onClick="pro();" 
+	style="font-size=20pt">
+	</p>
+	<textarea name="result" rows=10 cols=80
+	style="font-size:12pt background-color:yellow; font-family:굴림체;">
+	</textarea>
+	</form>
+</body>
+</html>

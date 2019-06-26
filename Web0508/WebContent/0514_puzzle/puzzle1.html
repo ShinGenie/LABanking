@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>장화신은 고양이퍼즐</title>
+
+<script type="text/javascript">
+//var  flag=false;
+var sunsu = new Array( );
+var temp = 1;
+var imgsource1 = new Array("1.gif", "2.gif", "3.gif", "4.gif", "5.gif","6.gif", "7.gif",
+    "8.gif", "9.gif", "10.gif", "11.gif", "12.gif", "13.gif", "14.gif", "15.gif","blink.gif");
+var blink = 0;
+
+function start( ) { //시작버튼클릭시 호출되는 함수
+	 for(a=0; a<16 ; a++){
+          sunsu[a] = Math.round(Math.random()*15); //난수 
+       for(b=0 ; b<a ; b++){
+        if( sunsu[a] == sunsu[b]) {  a--;  } //중복체크 
+        }// for b end 
+    } //for a end
+	mix( );  //그림섞기 
+}//end
+
+function mix( ){
+	for(i=0; i<16; i++) {
+	   document.images[i].src = imgsource1[sunsu[i]];
+	   if (sunsu[i]==15) blink = i;
+	} 
+}// mix end
+
+
+function move(k) {  //  이동
+	// 무조건 버리기floor 무조건올리기ceil 반올림round 절대값abs 난수random
+	var gap = Math.floor(blink-k);
+	alert("확인");
+	if(gap==1||gap==4){
+	//	if(Math.floor(blink/4)!=(Math.floor(k/4)){
+		//	if(gab==1){return;}
+		//}
+	temp=document.images[k].src;
+	document.images[k].src=document.images[blink].src;
+	document.images[blink].src=temp;
+	blink=k;}
+}// move end
+
+function bingo( ){  
+	//for(i=0;i<16;i++){
+		//if(document.images[i].src==imgsource1[sunsu[i]]) {
+			//alert("확인");
+			//if(imgsource1[sunsu[i]]==15)
+		//}		
+//	}	
+}// bingo end
+
+</script>
+
+</head>
+<body>
+<h1>퍼즐게임</h1>
+<form>
+<input type="button" onClick="start();" value="시작"><br><br>
+</form>
+<script type="text/javascript">
+	imgsource = new Array("1.gif", "2.gif", "3.gif", "4.gif", "5.gif", "6.gif", "7.gif", "8.gif",
+			  "9.gif", "10.gif", "11.gif", "12.gif", "13.gif", "14.gif", "15.gif", "16.gif");
+	for(i=0;i<16;i++){
+		  document.write("<img src="+imgsource[i]+" border=1 onclick='move("+i+")'>");
+		  if (((i+1)%4)==0) document.write("<br>") ;
+	}
+	alert("확인");
+</script>
+
+
+
+</body>
+</html>

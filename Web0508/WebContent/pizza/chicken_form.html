@@ -1,0 +1,174 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>[pizza_form.html]</title>
+<style type="text/css">
+	*{ font-size:12pt; color:gray;}
+	.menu{font-size:12pt; color: red;}
+	.relative {
+		position: absolute;
+		top:0;
+		float:left;
+		width: 350px;
+		height: 250px;
+		border:1px solid gray;
+		background-image: ;
+	}
+	.absolute {
+		position: relative;
+		float:left;
+		width: 350px;
+		height: 250px;
+		border:1px solid red;
+		background-image: ;
+		back
+	}
+	
+	.absolute2 {
+		position: relative;
+		float:left;
+		width: 250px;
+		height: 200px;
+		border:1px solid green;
+		background-image: ;
+	}
+	#a{background-image:url("images/bg_4.jpg")}
+</style>
+
+<script type="text/javascript">
+	function changechickenL(name) {
+		var filename = "url('chicken_images/" + name + ".png')";
+		preview_l.style.backgroundImage = filename;
+
+	}//end
+	
+	function changechickenR(name) {
+		var filename = "url('chicken_images/" + name + ".png')";
+		preview_r.style.backgroundImage = filename;
+		preview_l.style.backgroundImage.match;
+	}//end
+	
+	function side(name) {
+		var filename = "url('chicken_images/" + name + ".png')";
+		preview_side.style.backgroundImage = filename;
+	}//end
+</script>
+
+</head>
+<body id="a">
+
+메뉴를 선택해주세요<br>
+<div id="preview_l" class="relative" align="center"><p><br>
+  <div id="preview_r" class="absolute"> </div>
+  <div id="preview_side" class="absolute2"> </div>
+</div>
+<p>
+
+
+<br><br><br>
+<form id="form">
+<fieldset>
+<legend id="book">주문표</legend>
+<font class="menu"><b>메뉴판</b></font><br>
+<select name="chickenListLeft" onchange="changechickenL(this.value)">
+	<option value="bgchicken" selected="selected">치킨을 선택하세요</option>
+	<option value="c1">갈비천왕 치킨</option>
+	<option value="c2">오리지널 치킨</option>
+	<option value="c3">볼케이노 치킨</option>
+	<option value="c4">고추바사삭 치킨</option>
+	<option value="c5">허니멜로 치킨</option>
+	<option value="c6">핫 갈비천왕 치킨</option>
+	<option value="c7">스윗 볼케이노 치킨</option>
+	<option value="c8">볼케이노 모짜렐라 치킨</option>
+	<option value="c9">볼케이노 쌀떡볶이 치킨</option>
+	<option value="c10">양념 치킨 </option>
+	<option value="c11">딥치즈 치킨</option>
+	<option value="c12">후라이드 치킨</option>
+	
+</select>
+
+
+<select name="chickenListRight" onchange="changechickenR(this.value)">
+
+	<option value="bgchicken" selected="selected">치킨을 선택하세요</option>
+	<option value="c1">갈비천왕 치킨</option>
+	<option value="c2">오리지널 치킨</option>
+	<option value="c3">볼케이노 치킨</option>
+	<option value="c4">고추바사삭 치킨</option>
+	<option value="c5">허니멜로 치킨</option>
+	<option value="c6">핫 갈비천왕 치킨</option>
+	<option value="c7">스윗 볼케이노 치킨</option>
+	<option value="c8">볼케이노 모짜렐라 치킨</option>
+	<option value="c9">볼케이노 쌀떡볶이 치킨</option>
+	<option value="c10">양념 치킨 </option>
+	<option value="c11">딥치즈 치킨</option>
+	<option value="c12">후라이드 치킨</option>
+</select>
+
+
+<select name="side" onchange="side(this.value)">
+	<option value="s1" selected="selected">사이드메뉴</option>
+	<option value="s1">소세지</option>
+	<option value="s2">케이준감자</option>
+	<option value="s3">웻지감자</option>
+	<option value="s4">싱싱파채</option>
+	<option value="s5">모짜렐라</option>
+	<option value="s6">햇반</option>
+	<option value="s7">떡볶이</option>
+</select>
+<p>
+
+
+
+<div style="border:1px solid green; padding:15px; margin-top:10px;">
+	<font style="color:skyblue; font-weight:bold; ">필수항목</font><hr>
+	<div style="line-height:2">
+	고객명 &nbsp;<input type=text name=base size=10 value="">&nbsp;
+	이메일 &nbsp;<input type=email name=base size=20 value=""><br>
+	핸드폰 &nbsp;<input type=tel name=base size=10 value="">&nbsp;
+	배송지 &nbsp;<input type=text name=base size=20 value=""><br>
+	</div>
+</div>
+
+
+	
+
+	<div style="border:1px solid green; padding:15px; margin-top:10px ">
+	<font style="color:skyblue; font-weight:bold; line-height:1.5;">결제방법</font><hr>
+	<label><input type="checkbox" name="cupon">카드결제</label>
+	<label><input type="checkbox" name="cupon">현금결제</label>
+	<label><input type="checkbox" name="cupon">상품권결제</label>
+	</div>
+	
+	<div style="border:1px solid green; padding:15px; margin-top:10px ">
+	<font style="color:skyblue; font-weight:bold; line-height:1.5;">쿠폰사용</font><hr>
+	<label><input type="checkbox" name="cupon">첫구매쿠폰</label>
+	<label><input type="checkbox" name="cupon">카카오쿠폰</label>
+	<label><input type="checkbox" name="cupon">이벤트쿠폰</label>
+	<label><input type="checkbox" name="cupon">멤버쉽쿠폰</label>
+	</div>
+	
+
+</fieldset>
+
+<hr>
+
+	    <label>희망배송시간　　
+	    <input type="time" min="10:00" max="22:00" step="900">
+		</label>
+   </p>
+	<p>
+	<label>배송시요청사항　
+	 <textarea name="comments" maxlength="1000" rows="2" cols="30" style="vertical-align:middle; resize:none;">
+	 </textarea>
+	 </label>
+	 </p>
+	<p><button >피자주문하기</button></p>
+	
+	
+</form>
+</body>
+</html>
